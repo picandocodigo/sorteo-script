@@ -1,4 +1,13 @@
-Script rápido para el sorteo de mi blog (http://picandocodigo.net).
+Script para sorteos
+
+Script rápido que escribí para un sorteo de mi blog: 
+http://picandocodigo.net/2011/concurso-en-picando-codigo/
+
+Primer ejecución: 
+http://picandocodigo.net/2011/ganadores-del-primer-sorteo-de-picando-codigo/
+
+Dependencias:
+Nokorigi - http://github.com/tenderlove/nokogiri/tree/master
 
 Ejecutar con JRuby
 Probado en:
