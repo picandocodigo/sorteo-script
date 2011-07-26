@@ -1,0 +1,9 @@
+Script rápido para el sorteo de mi blog (http://picandocodigo.net).
+
+Ejecutar con JRuby
+Probado en:
+jruby 1.6.3 (ruby-1.8.7-p330) (2011-07-07 965162f) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_26) [linux-amd64-java]
+
+Instalar Nokogiri:
+jruby -S gem install nokogiri
+jruby --1.9 sorteo.rb
