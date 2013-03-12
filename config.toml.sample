@@ -1,0 +1,8 @@
+
+prizes = ["premio 1", "premio 2", "premio3", "premio4", "premio5"]
+title = "Mega premiere sorteo"
+
+[sources]
+webpage = "http://picandocodigo.net/2013/half-life-beta-para-steam-en-linux/"
+xpath = "span.author"
+tweet = 12341255346

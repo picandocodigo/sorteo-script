@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    blankslate (2.1.2.4)
+    nokogiri (1.5.6)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
+    toml (0.0.3)
+      parslet
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nokogiri
+  toml

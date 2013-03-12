@@ -10,6 +10,7 @@ class Premio
   def elegir_ganador(participantes)
     indice = rand(participantes.length)
     @ganador = participantes[indice]
+
     #Un premio por persona así que:
     participantes.delete(@ganador)
   end
