@@ -9,6 +9,7 @@ require_relative 'premio'
 class SorteoEngine
  
   def initialize
+    @participantes = []
     cargar_config
     puts '************************************************'
     puts '*           Sorteo Picando Código              *'
@@ -35,10 +36,10 @@ class SorteoEngine
     puts '*            Procesando comentarios            *'
 
     # TODO - Get Tweets RTs
+    cargar_tweets
 
-    @participantes = []
     comentarios_web.css(@config["sources"]["xpath"]).each do |n|
-      participante = {n.text.strip => n.css(".avatar")[0]['src']}
+      participante = "Del blog: " + n.text.strip
       # TODO - Only add user if not in hash already
       @participantes.push(participante)
     end
@@ -51,6 +52,20 @@ class SorteoEngine
     premios.each do |premio|
       sortear(premio)
     end
+  end
+
+  def cargar_tweets
+    if @config["sources"]["tweet"] != 0
+      # TODO: Si el sorteo es por RT, contar RT's de un tweet por ID
+    else
+      # Si junto los tweets de forma manual (mentions)
+      File.open("tweets", "r") do |tweet|
+        while (line = tweet.gets)
+          @participantes.push "De Twitter: " + line.match(/twitter.com\/([a-zA-Z0-9_]{1,15})/)[1]
+        end
+      end
+    end
+    
   end
   
   def sortear(nombre_premio)
