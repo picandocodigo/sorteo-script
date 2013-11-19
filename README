@@ -1,18 +1,10 @@
-Script para sorteos
+# Script para sorteos
 
-Script rápido que escribí para un sorteo de mi blog: 
-http://picandocodigo.net/2011/concurso-en-picando-codigo/
+Script rápido que escribí para sorteos en mi blog:
+ * http://picandocodigo.net/2011/script-en-ruby-sorteos/
+ * http://picandocodigo.net/2011/concurso-en-picando-codigo/
+ * http://picandocodigo.net/2012/tech-meetup-uruguay-2012/
+ * http://picandocodigo.net/2013/regalo-claves-steam-de-left-4-dead-2/
+ * http://picandocodigo.net/2013/regalo-entradas-para-el-tech-meetup-uruguay-2013/
 
-Primer ejecución: 
-http://picandocodigo.net/2011/ganadores-del-primer-sorteo-de-picando-codigo/
-
-Dependencias:
-Nokorigi - http://github.com/tenderlove/nokogiri/tree/master
-
-Ejecutar con JRuby
-Probado en:
-jruby 1.6.3 (ruby-1.8.7-p330) (2011-07-07 965162f) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_26) [linux-amd64-java]
-
-Instalar Nokogiri para JRuby:
-jruby -S gem install nokogiri
-jruby --1.9 sorteo.rb
+Y de repente alguno más...
