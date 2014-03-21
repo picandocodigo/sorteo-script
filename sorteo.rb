@@ -7,7 +7,7 @@ require 'open-uri'
 require_relative 'premio'
 
 class SorteoEngine
- 
+
   def initialize
     @participantes = []
     cargar_config
@@ -27,7 +27,7 @@ class SorteoEngine
   def cargar_config
     @config = TOML.load_file("config.toml")
   end
-  
+
   def cargar_cosas
     #TODO - Encapsular esto
     puts '*       Procesando datos de participantes      *'
@@ -55,7 +55,7 @@ class SorteoEngine
   end
 
   def cargar_tweets
-    if @config["sources"]["tweet"] != 0
+    if @config["sources"]["tweet"]
       # TODO: Si el sorteo es por RT, contar RT's de un tweet por ID
     else
       count = 0
@@ -66,11 +66,11 @@ class SorteoEngine
           @participantes.push "De Twitter: " + line.match(/twitter.com\/([a-zA-Z0-9_]{1,15})/)[1]
         end
       end
-      puts "*     Participantes en Twitter: #{count}         *"
+      puts "*     Participantes en Twitter: #{count}             *"
     end
-    
+
   end
-  
+
   def sortear(nombre_premio)
     premio = Premio.new(nombre_premio)
     puts "PREMIO: #{premio.nombre}"
@@ -78,7 +78,7 @@ class SorteoEngine
     puts 'GANADOR: ' + premio.ganador.to_s
     sleep(1.0)
   end
-  
+
 end
 
 sorteo = SorteoEngine.new
