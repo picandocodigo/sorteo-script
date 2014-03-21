@@ -35,15 +35,15 @@ class SorteoEngine
     comentarios_web = Nokogiri::HTML open(@config["sources"]["webpage"])
     puts '*            Procesando comentarios            *'
 
-    # TODO - Get Tweets RTs
-    cargar_tweets
-
     comentarios_web.css(@config["sources"]["xpath"]).each do |n|
       participante = "Del blog: " + n.text.strip
       # TODO - Only add user if not in hash already
       @participantes.push(participante)
     end
     puts "*     Participantes en comentarios: #{@participantes.length}         *"
+
+    # TODO - Get Tweets RTs
+    cargar_tweets
   end
 
   def ejecutar_sorteo
@@ -58,12 +58,15 @@ class SorteoEngine
     if @config["sources"]["tweet"] != 0
       # TODO: Si el sorteo es por RT, contar RT's de un tweet por ID
     else
+      count = 0
       # Si junto los tweets de forma manual (mentions)
       File.open("tweets", "r") do |tweet|
         while (line = tweet.gets)
+          count += 1
           @participantes.push "De Twitter: " + line.match(/twitter.com\/([a-zA-Z0-9_]{1,15})/)[1]
         end
       end
+      puts "*     Participantes en Twitter: #{count}         *"
     end
     
   end
